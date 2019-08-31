@@ -1,5 +1,14 @@
 # Assignment-1
 
+## Running program
+
+- Start the server by running the "Server.java".
+- Start the client by running the "client.py".
+
+## Client
+
+Change "localhost" on line 4 in the "client.py" to the ip-address of the server. If the server is running on a different computer.
+
 ## Homework Programming Exercise: Bank Service
 
 1. Create a Client application, which
