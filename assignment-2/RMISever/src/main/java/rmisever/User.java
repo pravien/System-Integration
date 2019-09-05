@@ -5,11 +5,13 @@
  */
 package rmisever;
 
+import java.io.Serializable;
+
 /**
  *
  * @author pravien
  */
-public class User {
+public class User implements Serializable {
     
     private String name,email;
 
@@ -24,6 +26,11 @@ public class User {
 
     public String getEmail() {
         return email;
+    }
+
+    @Override
+    public String toString() {
+        return "name="+name + ", email=" + email + '\n';
     }
     
 }
