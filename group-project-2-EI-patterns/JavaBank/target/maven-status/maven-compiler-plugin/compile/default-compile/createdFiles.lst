@@ -1,0 +1,7 @@
+nodea/bank/LoanResponse.class
+nodea/bank/BankConfiguration.class
+nodea/bank/controller/BankController.class
+nodea/bank/LoanEngine.class
+nodea/bank/Loan.class
+nodea/bank/Bank.class
+nodea/bank/LoanRequest.class
