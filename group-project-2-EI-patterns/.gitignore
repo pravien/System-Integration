@@ -5,3 +5,4 @@
 **/.classpath
 **/.project
 *.log
+**/__pycache__
