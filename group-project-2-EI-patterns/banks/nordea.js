@@ -1,8 +1,8 @@
 const express = require('express')
 const app = express()
 const port = 3000
-const paraChecker = require('parameterCheck')
-app.use(paraChecker)
+//const paraChecker = require('parameterCheck')
+//app.use(paraChecker)
 const name = 'Nordea'
 function calculateInterest(month){
     if (month < 12){
@@ -16,7 +16,7 @@ function calculateInterest(month){
     }
 }
 
-app.get('/', paraChecker, function (req,res){
+app.get('/', function (req,res){
     var month = req.query.month;
     var amount = req.query.amount;
 
