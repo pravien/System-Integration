@@ -5,6 +5,8 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
-    "nodemon": "^1.19.4"
+    "nodemon": "^1.19.4",
+    "amqplib": "^0.5.5",
+    "cors": "^2.8.5"
   }
 }
