@@ -28,8 +28,8 @@ public class BankController {
     @Autowired
     private LoanEngine loanEngine;
 
-    @RequestMapping(path = "/", method =  RequestMethod.POST, consumes = MediaType.APPLICATION_XML_VALUE)
-    public @ResponseBody Object test(@RequestBody() LoanRequest request) {
+    @RequestMapping(path = "/", method =  RequestMethod.POST, consumes = MediaType.APPLICATION_XML_VALUE, produces = MediaType.APPLICATION_XML_VALUE)
+    public @ResponseBody() LoanResponse test(@RequestBody() LoanRequest request) {
         logger.info("Received loan request: " + request.toString());
 
         Collection<Loan> loans = loanEngine.calculateLoans(request.getAmount(), request.getDurationInMonths());
