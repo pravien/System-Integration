@@ -5,7 +5,7 @@
 ### Example java bank request:
 
 ```sh
-curl -H "Content-Type: application/xml"  -H "Accept: application/xml" -d  '<LoginRequest><amount>12</amount></LoginRequest>' localhost:8080
+curl -H "Content-Type: application/xml"  -H "Accept: application/xml" -d  '<LoanRequest><amount>12</amount><durationInMonths>51</durationInMonths></LoanRequest>' localhost:8080
 ```
 
 ### Example  java bank response:
