@@ -7,16 +7,12 @@ from javabank_adapter import JavaBankAdapter
 
 momHost="localhost";
 
-if "ADAPTER" not in os.environ:
-    print("Please pass an 'ADAPTER=nodebank|javabank' env variable")
-    sys.exit(1)
 
-if os.environ["ADAPTER"].lower() == 'javabank':
-    bankUrl="http://localhost:8080/"
-    adapter=JavaBankAdapter(bankUrl)
-else:
-    bankUrl="http://localhost:3000/"
-    adapter=NodeBankAdapter(bankUrl)
+bankUrl_java="http://localhost:8080/"
+adapter_java=JavaBankAdapter(bankUrl_java)
+
+bankUrl_node="http://localhost:3000/"
+adapter_node=NodeBankAdapter(bankUrl_node)
 
 
 connection = pika.BlockingConnection(
@@ -30,8 +26,10 @@ def callback(ch, method, properties, body):
     response = None
     try:
         msg = json.loads(body.decode("utf-8"))
-        loan = adapter.getLoans(msg["amount"], msg["period"])
-        response = json.dumps(loan)
+        loan_java = adapter_java.getLoans(msg["amount"], msg["period"])
+        loan_node = adapter_node.getLoans(msg["amount"], msg["period"])
+        loans = loan_java+loan_node
+        response = json.dumps(loans)
 
         print(" [X] Sent %r" % response)
     except Exception as e: 
