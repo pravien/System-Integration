@@ -3,6 +3,25 @@
 
 ![architecture overview](assets/arch.png)
 
+## BPM Diagram
+![BPN overview](assets/diagram.png)
+
+##  Formats
+
+The application make use of two different formats, which are JSON and XML.
+
+## Integration platform
+
+We used MOM. The tool we used for this was rabbitMQ
+
+## Integrations patterns
+
+- RPC
+- Correlation identifier
+- Adapte
+- Gateway
+- Transformation
+
 ## Running the maddness
 
 ### Launch the banks:
@@ -23,8 +42,7 @@ Depends on your setup, have fun.
 ### Launch adapters for the banks(RabbitMQ must be running)
 
 ```
-ADAPTER=nodebank python3 rabbitMq/adapters/adapter.py
-ADAPTER=javabank python3 rabbitMq/adapters/adapter.py
+python3 rabbitMq/adapters/adapter.py
 ```
 
 ### Launch client application

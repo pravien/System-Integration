@@ -6,7 +6,7 @@ class NodeBankAdapter:
         self.bankUrl = bankUrl
 
     def getLoans(self, amount, duration):
-        r = requests.get(self.bankUrl)
+        r = requests.get(self.bankUrl+"?amount=" + str(amount) + "&month=" + str(duration))
         if r.status_code == 200:
             return [r.json()]
         else:
